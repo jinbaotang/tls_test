@@ -1,0 +1,1 @@
+/usr/bin/cc -g  -rdynamic CMakeFiles/tls_test_server1.dir/tls_server1.c.o  -o tls_test_server1 -lssl -ldl -lcrypto 

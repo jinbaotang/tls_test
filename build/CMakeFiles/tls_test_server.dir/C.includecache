@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jinbao/test/tls_test/tls_server.c
+arpa/inet.h
+-
+errno.h
+-
+netinet/in.h
+-
+openssl/err.h
+-
+openssl/ssl.h
+-
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+sys/socket.h
+-
+sys/types.h
+-
+sys/wait.h
+-
+unistd.h
+-
+
