@@ -1,0 +1,8 @@
+
+ColumnLimit:    120
+# 缩进宽度
+IndentWidth:    4
+TabWidth:    4
+
+#AlignConsecutiveDeclarations: false
+PointerAlignment: Right

@@ -14,10 +14,3 @@ target_link_libraries(${PROJECT_NAME}_client ssl dl crypto)
 
 add_executable (${PROJECT_NAME}_server $ENV{TLS_RUNTIME_PATH}/tls_server.c)
 target_link_libraries(${PROJECT_NAME}_server ssl dl crypto)
-
-add_executable (${PROJECT_NAME}_client1 $ENV{TLS_RUNTIME_PATH}/tls_client1.c)
-target_link_libraries(${PROJECT_NAME}_client1 ssl dl crypto)
-
-
-add_executable (${PROJECT_NAME}_server1 $ENV{TLS_RUNTIME_PATH}/tls_server1.c)
-target_link_libraries(${PROJECT_NAME}_server1 ssl dl crypto)

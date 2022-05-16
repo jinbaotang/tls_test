@@ -1,0 +1,39 @@
+{
+    "configurations": [
+        {
+            "name": "linux_x86-64",
+            "includePath": [
+                // "${workspaceFolder}/router",
+                // "${workspaceFolder}/router/router_control",
+                // "${workspaceFolder}/router/router_process",
+                // "${workspaceFolder}/router/interface",
+                // "${workspaceFolder}/transport/doip/doip_demo",
+                // "${workspaceFolder}/transport/doip/cfg",
+                // "${workspaceFolder}/transport/doip/doip_core",
+                // "${workspaceFolder}/transport/doip/interface",
+                // "${workspaceFolder}/transport/doip",
+                // "${workspaceFolder}/transport/doip/socket_adaptor",
+                // "${workspaceFolder}/transport/doip/doip_core/doip",
+                // "${workspaceFolder}/transport/cantp/can_adaptor",
+                // "${workspaceFolder}/transport/cantp/cantp_core",
+                // "${workspaceFolder}/transport/cantp/interface",
+                // "${workspaceFolder}/transport/cantp/cantp_cfg",
+                // "${workspaceFolder}/transport/cantp/cantp_core/cantp",
+                // "${workspaceFolder}/uds-lib/euds/implement/uds_appl/include",
+                // "${workspaceFolder}/uds-lib/euds/implement/uds_appl/include"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "windowsSdkVersion": "10.0.19041.0",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-msvc-x64",
+            "compileCommands": "${workspaceFolder}/build/compile_commands.json"
+
+        }
+    ],
+    "version": 4
+}

@@ -1,0 +1,49 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        // {
+        //     "name": "Python: Current File",
+        //     "type": "python",
+        //     "request": "launch",
+        //     "program": "${workspaceFolder}/python_test/doip_py.py",
+        //     "console": "integratedTerminal"
+        // },
+        {
+            "name": "(gdb) Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            // "program": "${workspaceFolder}/build/bin/cantp_server",
+            // "program": "${workspaceFolder}/build/bin/cantp_client",
+            // "program": "${workspaceFolder}/build/bin/doip_test_client",
+            // "program": "${workspaceFolder}/build/bin/doip_test_server",
+            // "program": "${workspaceFolder}/build/bin/router_test_cfg",
+            // "program": "${workspaceFolder}/build/bin/router_test_client",
+            // "program": "${workspaceFolder}/build/bin/router_test_server",
+            // "program": "${workspaceFolder}/build1/bin/uds_client_appl",
+            "program": "${workspaceFolder}/build/bin/udsd",
+            // "program": "${workspaceFolder}/tmp_test/test1",
+            // "args": ["-f/home/jinbao/2.BGW/uds-component/build/bin/doip_test_server"],
+            // "args": ["-s 65f", "-t 6df"],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/opt/fsl-imx-wayland/4.14-sumo/sysroots/x86_64-pokysdk-linux/usr/bin/aarch64-poky-linux-musl/aarch64-poky-linux-musl-gdb",
+            "miDebuggerServerAddress": "172.20.1.1:21314",
+            // "miDebuggerServerAddress": "127.0.0.1:21314",
+            // "miDebuggerServerAddress": "10.110.42.120:21314",
+
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+        }
+    ]
+}

@@ -1,0 +1,54 @@
+{
+    "files.associations": {
+        "ssl.h": "c"
+    },
+    "editor.formatOnSave": false,
+    "C_Cpp.clang_format_style": "{ BasedOnStyle: LLVM, IndentWidth: 4, ColumnLimit: 120}",
+    "C_Cpp.intelliSenseEngine": "Default",
+    "C_Cpp.intellisenseEngineFallback": "Disable",
+    // Doxygen documentation generator set
+    // 文件注释：版权信息模板
+    "doxdocgen.file.copyrightTag": [
+        "@copyright Copyright (c) {year}  nio"
+    ],
+    // 文件注释：自定义模块，这里我添加一个修改日志
+    "doxdocgen.file.customTag": [
+        "@par 修改日志:",
+        "<table>",
+        "<tr><th>Date       <th>Version <th>Author  <th>Description",
+        "<tr><td>{date} <td>1.0     <td>wangh     <td>内容",
+        "</table>",
+    ],
+    // 文件注释的组成及其排序
+    "doxdocgen.file.fileOrder": [
+        "file", // @file
+        "brief", // @brief 简介
+        "author", // 作者
+        "version", // 版本
+        "date", // 日期
+        "empty", // 空行
+        "copyright", // 版权
+        "empty",
+        "custom" // 自定义
+    ],
+    // 下面时设置上面标签tag的具体信息
+    "doxdocgen.file.fileTemplate": "@file {name}",
+    "doxdocgen.file.versionTag": "@version 1.0",
+    "doxdocgen.generic.authorEmail": "jinbao.tang@nio.com",
+    "doxdocgen.generic.authorName": "jinbao.tang",
+    "doxdocgen.generic.authorTag": "@author {author} ({email})",
+    // 日期格式与模板
+    "doxdocgen.generic.dateFormat": "YYYY-MM-DD",
+    "doxdocgen.generic.dateTemplate": "@date {date}",
+    // 根据自动生成的注释模板（目前主要体现在函数注释上）
+    "doxdocgen.generic.order": [
+        "brief",
+        "tparam",
+        "param",
+        "return"
+    ],
+    "doxdocgen.generic.paramTemplate": "@param{indent:8}{param}{indent:25}",
+    "doxdocgen.generic.returnTemplate": "@return {type} ",
+    "doxdocgen.generic.splitCasingSmartText": true,
+    // "C_Cpp.errorSquiggles": "Disabled",
+}

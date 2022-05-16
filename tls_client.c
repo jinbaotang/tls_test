@@ -1,3 +1,4 @@
+// tls_client.c
 #include <arpa/inet.h>
 #include <errno.h>
 #include <netinet/in.h>
@@ -18,16 +19,17 @@ void ShowCerts(SSL *ssl) {
 
     cert = SSL_get_peer_certificate(ssl);
     if (cert != NULL) {
-        printf("数字证书信息:\n");
+        printf("certificate info:\n");
         line = X509_NAME_oneline(X509_get_subject_name(cert), 0, 0);
-        printf("证书: %s\n", line);
+        printf("subject: %s\n", line);
         free(line);
         line = X509_NAME_oneline(X509_get_issuer_name(cert), 0, 0);
-        printf("颁发者: %s\n", line);
+        printf("issuer: %s\n", line);
         free(line);
         X509_free(cert);
-    } else
-        printf("无证书信息！\n");
+    } else{
+        printf("no certificate infomation.\n");
+    }
 }
 
 int main(int argc, char **argv) {
@@ -36,14 +38,6 @@ int main(int argc, char **argv) {
     char buffer[MAXBUF + 1];
     SSL_CTX *ctx;
     SSL *ssl;
-
-    if (argc != 3) {
-        printf(
-            "参数格式错误！正确用法如下：\n\t\t%s IP地址 端口\n\t比如:\t%s 127.0.0.1 80\n此程序用来从某个 IP "
-            "地址的服务器某个端口接收最多 MAXBUF 个字节的消息",
-            argv[0], argv[0]);
-        exit(0);
-    }
 
     SSL_library_init();
     OpenSSL_add_all_algorithms();
@@ -86,20 +80,23 @@ int main(int argc, char **argv) {
 
     bzero(buffer, MAXBUF + 1);
     len = SSL_read(ssl, buffer, MAXBUF);
-    if (len > 0)
-        printf("接收消息成功:'%s'，共%d个字节的数据\n", buffer, len);
-    else {
-        printf("消息接收失败！错误代码是%d，错误信息是'%s'\n", errno, strerror(errno));
+    if (len > 0){
+        printf("recv %d bytes with '%s'.\n", len, buffer);
+    } else{
+        printf("recvive error. errno: %d, error infomation:%s.\n", errno, strerror(errno));
         goto finish;
     }
+
     bzero(buffer, MAXBUF + 1);
     strcpy(buffer, "from client->server");
 
     len = SSL_write(ssl, buffer, strlen(buffer));
-    if (len < 0)
-        printf("消息'%s'发送失败！错误代码是%d，错误信息是'%s'\n", buffer, errno, strerror(errno));
-    else
-        printf("消息'%s'发送成功，共发送了%d个字节！\n", buffer, len);
+    if (len <= 0) {
+        printf("send '%s' failed, errno: %d, error infomation: '%s'.\n", buffer, errno, strerror(errno));
+        goto finish;
+    } else{
+        printf("send %d bytes '%s' successfuly.\n", len, buffer);
+    }
 
 finish:
     SSL_shutdown(ssl);
